@@ -84,15 +84,15 @@ namespace WordCounterApp
             foreach (string w in wordsArray)
             {
                 WordCounter foundWord = wordCounters.Find(x => x.word == w);
-                if(foundWord == null)
+                if (foundWord == null)
                 {
-                    wordCounters.Add(new WordCounter(w,1));
+                    wordCounters.Add(new WordCounter(w, 1));
                 }
                 else
                 {
                     foundWord.frequency++;
                 }
-
+            }
                 listView1.Columns.Add("Word", 100);
                 listView1.Columns.Add("Frequency", 70);
 
@@ -106,7 +106,7 @@ namespace WordCounterApp
                     string[] rowItem = new string[] { word.frequency.ToString("1"), word.word };
                     listView1.Items.Add( new ListViewItem(rowItem));
                 }
-            }
+            
         }
     }
 }
